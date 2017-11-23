@@ -1,0 +1,96 @@
+.app {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+
+.input {
+  border-bottom: 2px dashed black;
+  text-overflow: ellipsis;
+  opacity: 0;
+  transition: all 0.5s;
+  width: 50%;
+}
+
+.input-visible {
+  opacity: 1;
+}
+
+.word-container {
+  display: flex;
+  margin-bottom: 150px;
+  position: relative;
+  transition: all 0.5s;
+}
+
+@keyframes word-container-appear {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.word-container-appear {
+  animation: word-container-appear 1s;
+}
+
+.word-hint {
+  transform: rotateX(60deg) rotateZ(-45deg) scale(1.25) translateZ(-3rem);
+}
+
+.word-hint .definition,
+.word-finished .definition {
+  opacity: 1;
+}
+
+.word {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.definition {
+  align-items: center;
+  display: flex;
+  font-family: serif;
+  font-size: 15px;
+  font-style: italic;
+  left: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.5s;
+}
+
+.definition-line {
+  background-color: black;
+  display: block;
+  height: 1px;
+  margin: 0 5px 0 10px; /* TODO: convert to rems all px values */
+  width: 50px;
+}
+
+.messages-bold {
+  font-weight: 700;
+}
+
+button {
+  border: 3px solid black;
+  border-radius: 36px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  margin-bottom: 50px;
+  outline: none;
+  padding: 10px 20px;
+}
